@@ -1,2 +1,22 @@
-# Projects_Gallery_Lakshay
-A responsive portfolio website to showcase all my projects built with HTML, CSS, and JavaScript. This site displays each project with a description, GitHub repository link, and live demo link, making it easy for visitors to explore my work.
+# 🚀 My Project Showcase
+
+Welcome to my **Project Showcase Website**! 🌟  
+A **responsive portfolio** built with **HTML, CSS & JavaScript** to display all my projects with **descriptions, GitHub links, and live demos**.  
+
+---
+
+## ✨ Features
+- 📱 **Responsive Design** – Looks great on mobile, tablet & desktop  
+- 🖼️ **Project Cards** – Each project shows:
+  - 📄 Description
+  - 🔗 GitHub Link
+  - 🌐 Live Demo Link  
+- 💫 **Interactive UI** – Smooth animations and transitions  
+- 🎨 Clean & modern design with semantic HTML and CSS  
+
+---
+
+## 🛠️ Technologies Used
+- HTML5 📝  
+- CSS3 🎨 (Flexbox & Grid)  
+- JavaScript ⚡ (DOM Manipulation & Interactivity) 
