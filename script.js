@@ -34,13 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.display = "flex";
     });
 
-    // Get modal elements
+    // Get or create modal elements
     let projectModal = document.getElementById("project-modal");
     let modalContent = document.querySelector(".modal-content");
     let modalBackBtn = document.getElementById("modal-back-btn");
     let modalTitle = document.querySelector(".modal-title");
 
-    // If modal elements don't exist, create them
+    // If modal doesn't exist, create it
     if (!projectModal) {
         const modalHTML = `
             <div id="project-modal" class="project-modal">
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
-    // Re-get modal elements after potential creation
+    // Get final references
     const finalModal = document.getElementById("project-modal");
     const finalModalContent = document.querySelector(".modal-content");
     const finalModalBackBtn = document.getElementById("modal-back-btn");
@@ -80,18 +80,28 @@ document.addEventListener("DOMContentLoaded", () => {
     function openModal(projectCard) {
         if (!finalModal || !finalModalContent) return;
 
-        // Deep clone the project card with all content
+        // Deep clone the project card
         const clonedCard = projectCard.cloneNode(true);
         clonedCard.classList.add("modal-project-card");
         clonedCard.classList.remove("project-card");
+        clonedCard.style.display = "block";
 
-        // Remove the view more overlay from cloned card
+        // Remove view more overlay
         const clonedOverlay = clonedCard.querySelector(".view-more-overlay");
         if (clonedOverlay) clonedOverlay.remove();
 
-        // Remove any stray view-more-btn that might be inside
+        // Remove any stray view-more-btn
         const extraBtn = clonedCard.querySelector(".view-more-btn");
         if (extraBtn) extraBtn.remove();
+
+        // Ensure description is fully visible
+        const desc = clonedCard.querySelector(".project-description");
+        if (desc) {
+            desc.style.display = "block";
+            desc.style.webkitLineClamp = "unset";
+            desc.style.maxHeight = "none";
+            desc.style.overflow = "visible";
+        }
 
         // Update modal title
         const projectTitle = clonedCard.querySelector(".project-title");
@@ -109,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = "hidden";
         document.body.classList.add("modal-open");
 
-        // Scroll modal to top
+        // Scroll to top
         finalModal.scrollTop = 0;
     }
 
@@ -122,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         closeBtn.addEventListener("click", closeModal);
     }
 
-    // Close modal when clicking outside (backdrop)
+    // Close on backdrop click
     if (finalModal) {
         finalModal.addEventListener("click", (e) => {
             if (e.target === finalModal) {
@@ -139,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const projectCard = overlay.closest(".project-card");
 
         if (viewMoreBtn && projectCard) {
-            // Remove any existing listeners by cloning
+            // Remove existing listeners by cloning
             const newBtn = viewMoreBtn.cloneNode(true);
             viewMoreBtn.parentNode.replaceChild(newBtn, viewMoreBtn);
 
@@ -166,13 +176,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Close modal on resize from mobile to desktop
-    function handleResize() {
-        if (window.innerWidth > 640 && finalModal && finalModal.classList.contains("active")) {
-            closeModal();
-        }
-    }
-
-    window.addEventListener("resize", handleResize);
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth > 640 && finalModal && finalModal.classList.contains("active")) {
+                closeModal();
+            }
+        }, 100);
+    });
 
     // Close modal on Escape key
     document.addEventListener("keydown", (e) => {
@@ -180,6 +192,13 @@ document.addEventListener("DOMContentLoaded", () => {
             closeModal();
         }
     });
+
+    // Prevent touch events from bubbling incorrectly on modal content
+    if (finalModalContent) {
+        finalModalContent.addEventListener("touchstart", (e) => {
+            e.stopPropagation();
+        }, { passive: true });
+    }
 
     // Set copyright year
     const yearEl = document.getElementById("copyright-year");
