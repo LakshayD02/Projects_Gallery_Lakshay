@@ -416,3 +416,69 @@ body.modal-open {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+.project-modal {
+    display: none;
+    padding: 0; /* Remove any default padding */
+}
+
+.project-modal.active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.modal-content {
+    padding: 16px 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-project-card {
+    width: 100%;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Ensure description shows full text */
+.modal-project-card .project-description {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    max-height: none !important;
+    overflow: visible !important;
+    white-space: normal;
+}
+
+/* Make links easy to tap */
+.modal-project-card .project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-project-card .project-link {
+    padding: 12px 16px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Prevent sticky header from covering content */
+.modal-header {
+    padding: 12px 16px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Add a close (X) button for better UX */
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0 8px;
+}
