@@ -29,6 +29,7 @@ body {
     color: var(--text);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 header {
@@ -66,6 +67,7 @@ h1 {
     background: #dbeafe;
     color: #1e3a8a;
     font-weight: 600;
+    transition: all 0.2s ease;
 }
 
 .filter-btn.active {
@@ -107,6 +109,7 @@ h1 {
     opacity: 0;
     transform: scale(0.96);
     pointer-events: none;
+    display: none;
 }
 
 .project-image {
@@ -168,6 +171,7 @@ h1 {
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
+    transition: all 0.2s ease;
 }
 
 .github-link {
@@ -185,13 +189,21 @@ h1 {
     display: none;
 }
 
+/* Modal Styles - Enhanced for Mobile */
 .project-modal {
     position: fixed;
     inset: 0;
     display: none;
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(4px);
     z-index: 1000;
     overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.project-modal.active {
+    opacity: 1;
 }
 
 .modal-header {
@@ -209,25 +221,52 @@ h1 {
 .modal-back-btn {
     border: 0;
     border-radius: 8px;
-    padding: 0.35rem 0.5rem;
+    padding: 0.5rem 0.7rem;
     background: #eff6ff;
     color: #1e3a8a;
     cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.modal-back-btn:active {
+    transform: scale(0.95);
 }
 
 .modal-title {
     margin: 0;
     font-size: 1rem;
+    font-weight: 600;
 }
 
 .modal-content {
     padding: 1rem;
+    background: #f8fafc;
+    min-height: calc(100vh - 60px);
 }
 
 .modal-project-card {
     background: var(--card-bg);
     border-radius: var(--border-radius);
     overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.modal-project-card .project-image {
+    height: 220px;
+}
+
+.modal-project-card .project-content {
+    padding: 1.25rem;
+}
+
+.modal-project-card .project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-height: none;
+    overflow: visible;
 }
 
 .footer {
@@ -238,12 +277,14 @@ h1 {
     text-align: center;
 }
 
+/* Tablet View */
 @media (max-width: 1024px) {
     .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+/* Mobile View */
 @media (max-width: 600px) {
     .projects-grid {
         grid-template-columns: 1fr;
@@ -252,6 +293,7 @@ h1 {
 
     .filter-container {
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .filter-buttons {
@@ -267,7 +309,17 @@ h1 {
     }
 
     .project-card {
-        max-height: 280px;
+        max-height: 320px;
+        position: relative;
+    }
+
+    /* Truncate description on mobile card */
+    .project-card .project-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .view-more-overlay {
@@ -286,14 +338,155 @@ h1 {
         background: linear-gradient(135deg, var(--primary), var(--primary-dark));
         color: #fff;
         border: none;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 0.8rem;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 0.85rem;
         font-weight: 600;
         cursor: pointer;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        transition: all 0.2s ease;
+    }
+
+    .view-more-btn:active {
+        transform: scale(0.96);
     }
 
     .project-image {
         height: 160px;
     }
+
+    /* Modal mobile specific styles */
+    .project-modal {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .modal-header {
+        padding: 0.75rem 1rem;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .modal-title {
+        font-size: 0.95rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1;
+    }
+
+    .modal-content {
+        padding: 0.75rem;
+        min-height: calc(100vh - 55px);
+    }
+
+    .modal-project-card {
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .modal-project-card .project-image {
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .modal-project-card .project-content {
+        padding: 1rem;
+    }
+
+    .modal-project-card .project-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .modal-project-card .project-description {
+        -webkit-line-clamp: unset;
+        max-height: none;
+        overflow: visible;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        margin-bottom: 1rem;
+    }
+
+    .modal-project-card .project-tags {
+        margin-bottom: 1rem;
+    }
+
+    .modal-project-card .project-links {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .modal-project-card .project-link {
+        justify-content: center;
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    /* Prevent body scroll when modal is open */
+    body.modal-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Small mobile devices (below 400px) */
+@media (max-width: 400px) {
+    .modal-project-card .project-image {
+        height: 150px;
+    }
+
+    .modal-project-card .project-content {
+        padding: 0.85rem;
+    }
+
+    .modal-project-card .project-title {
+        font-size: 1rem;
+    }
+
+    .modal-project-card .project-description {
+        font-size: 0.85rem;
+    }
+
+    .tag {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.5rem;
+    }
+}
+
+/* Landscape mode on mobile */
+@media (max-width: 600px) and (orientation: landscape) {
+    .project-card {
+        max-height: 280px;
+    }
+    
+    .project-card .project-description {
+        -webkit-line-clamp: 2;
+    }
+    
+    .modal-project-card .project-image {
+        height: 140px;
+    }
+    
+    .modal-content {
+        min-height: calc(100vh - 55px);
+    }
+}
+
+/* Animation for modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-project-card {
+    animation: modalFadeIn 0.25s ease-out;
 }
