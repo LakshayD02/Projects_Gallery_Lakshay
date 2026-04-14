@@ -490,3 +490,125 @@ h1 {
 .modal-project-card {
     animation: modalFadeIn 0.25s ease-out;
 }
+
+/* Modal Styles - Add this at the end of your existing CSS */
+.project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    overflow-y: auto;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.project-modal.active {
+    display: block;
+    opacity: 1;
+}
+
+.modal-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 10;
+}
+
+.modal-back-btn {
+    background: #eff6ff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #1e3a8a;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.modal-content {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.modal-project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.modal-project-card .project-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.modal-project-card .project-content {
+    padding: 20px;
+}
+
+.modal-project-card .project-description {
+    max-height: none;
+    overflow: visible;
+    display: block;
+}
+
+.modal-project-card .project-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Mobile specific modal styles */
+@media (max-width: 600px) {
+    .modal-header {
+        padding: 12px 15px;
+    }
+    
+    .modal-title {
+        font-size: 16px;
+    }
+    
+    .modal-content {
+        padding: 12px;
+    }
+    
+    .modal-project-card .project-image {
+        height: 180px;
+    }
+    
+    .modal-project-card .project-content {
+        padding: 15px;
+    }
+    
+    .modal-project-card .project-links {
+        flex-direction: column;
+    }
+    
+    .modal-project-card .project-link {
+        justify-content: center;
+        text-align: center;
+    }
+}
