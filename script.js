@@ -40,11 +40,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalBackBtn = document.getElementById("modal-back-btn")
     const modalTitle = document.querySelector(".modal-title")
 
+    // If modal elements don't exist, create them
+    if (!projectModal) {
+        const modalHTML = `
+            <div id="project-modal" class="project-modal">
+                <div class="modal-header">
+                    <button id="modal-back-btn" class="modal-back-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <h3 class="modal-title">Project Details</h3>
+                </div>
+                <div class="modal-content"></div>
+            </div>
+        `
+        document.body.insertAdjacentHTML('beforeend', modalHTML)
+    }
+
+    // Re-get modal elements after potential creation
+    const finalModal = document.getElementById("project-modal")
+    const finalModalContent = document.querySelector(".modal-content")
+    const finalModalBackBtn = document.getElementById("modal-back-btn")
+    const finalModalTitle = document.querySelector(".modal-title")
+
     // Close modal function
     function closeModal() {
-        if (projectModal) {
-            projectModal.style.display = "none"
-            projectModal.classList.remove("active")
+        if (finalModal) {
+            finalModal.style.display = "none"
+            finalModal.classList.remove("active")
             document.body.style.overflow = ""
             document.body.classList.remove("modal-open")
         }
@@ -52,14 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Open modal function
     function openModal(projectCard) {
-        if (!projectModal || !modalContent) return
+        if (!finalModal || !finalModalContent) return
         
-        // Clone the project card
+        // Deep clone the project card with all content
         const clonedCard = projectCard.cloneNode(true)
         clonedCard.classList.add("modal-project-card")
         clonedCard.classList.remove("project-card")
 
-        // Remove view more overlay from cloned card
+        // Remove the view more overlay from cloned card
         const clonedOverlay = clonedCard.querySelector(".view-more-overlay")
         if (clonedOverlay) {
             clonedOverlay.remove()
@@ -67,30 +89,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Update modal title
         const projectTitle = clonedCard.querySelector(".project-title")
-        if (modalTitle && projectTitle) {
-            modalTitle.textContent = projectTitle.textContent
+        if (finalModalTitle && projectTitle) {
+            finalModalTitle.textContent = projectTitle.textContent
         }
 
         // Clear and add content
-        modalContent.innerHTML = ""
-        modalContent.appendChild(clonedCard)
+        finalModalContent.innerHTML = ""
+        finalModalContent.appendChild(clonedCard)
 
         // Show modal
-        projectModal.style.display = "block"
-        projectModal.classList.add("active")
+        finalModal.style.display = "block"
+        finalModal.classList.add("active")
         document.body.style.overflow = "hidden"
         document.body.classList.add("modal-open")
     }
 
     // Back button click
-    if (modalBackBtn) {
-        modalBackBtn.addEventListener("click", closeModal)
+    if (finalModalBackBtn) {
+        finalModalBackBtn.addEventListener("click", closeModal)
     }
 
     // Close modal when clicking outside
-    if (projectModal) {
-        projectModal.addEventListener("click", (e) => {
-            if (e.target === projectModal) {
+    if (finalModal) {
+        finalModal.addEventListener("click", (e) => {
+            if (e.target === finalModal) {
                 closeModal()
             }
         })
@@ -104,7 +126,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const projectCard = overlay.closest(".project-card")
 
         if (viewMoreBtn && projectCard) {
-            viewMoreBtn.addEventListener("click", (e) => {
+            // Remove any existing listeners to avoid duplicates
+            const newBtn = viewMoreBtn.cloneNode(true)
+            viewMoreBtn.parentNode.replaceChild(newBtn, viewMoreBtn)
+            
+            newBtn.addEventListener("click", (e) => {
                 e.stopPropagation()
                 
                 // On mobile (width <= 600px), open modal
@@ -115,10 +141,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 else {
                     if (projectCard.classList.contains("expanded")) {
                         projectCard.classList.remove("expanded")
-                        viewMoreBtn.textContent = "View More"
+                        newBtn.textContent = "View More"
                     } else {
                         projectCard.classList.add("expanded")
-                        viewMoreBtn.textContent = "View Less"
+                        newBtn.textContent = "View Less"
                     }
                 }
             })
@@ -127,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Close modal on resize from mobile to desktop
     function handleResize() {
-        if (window.innerWidth > 600 && projectModal && projectModal.style.display === "block") {
+        if (window.innerWidth > 600 && finalModal && finalModal.style.display === "block") {
             closeModal()
         }
     }
@@ -136,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Close modal on Escape key
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && projectModal && projectModal.style.display === "block") {
+        if (e.key === "Escape" && finalModal && finalModal.style.display === "block") {
             closeModal()
         }
     })
