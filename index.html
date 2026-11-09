@@ -1,47 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lakshay | Project Showcase</title>
+    <title>Lakshay Dhoundiyal | Project Showcase & Portfolio</title>
+    <meta name="description"
+        content="A curated showcase of modern web applications, full-stack platforms, AI systems, and cybersecurity tools built by Lakshay Dhoundiyal." />
 
     <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" 
-    href="data:image/svg+xml,
-    %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E
-    %3Crect width='100' height='100' fill='%2300008B'/%3E
-    %3Ctext x='50' y='65' font-size='60' text-anchor='middle' fill='white' font-family='Arial'%3EL%3C/text%3E
-    %3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+        %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E
+        %3Cdefs%3E
+        %3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E
+        %3Cstop offset='0%25' stop-color='%236366f1'/%3E
+        %3Cstop offset='100%25' stop-color='%233b82f6'/%3E
+        %3C/linearGradient%3E
+        %3C/defs%3E
+        %3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E
+        %3Ctext x='50' y='68' font-size='56' font-weight='bold' text-anchor='middle' fill='white' font-family='sans-serif'%3EL%3C/text%3E
+        %3C/svg%3E" />
 
-    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
-<body class="light-theme">
-    <header>
-        <div class="header-content">
-            <h1>Project Showcase</h1>
-            <p class="subheading">A collection of my projects built with modern web technologies.</p>
+
+<body class="dark-theme">
+    <!-- Modern Sticky Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <span class="brand-avatar">L</span>
+                <div class="brand-info">
+                    <span class="brand-name">Lakshay Dhoundiyal</span>
+                    <span class="brand-title">Full Stack Developer</span>
+                </div>
+            </a>
+
+            <div class="nav-actions">
+                <div class="status-badge" title="Open to opportunities">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Available for work</span>
+                </div>
+
+                <a href="https://github.com/LakshayD02" target="_blank" rel="noopener" class="nav-icon-link"
+                    aria-label="GitHub Profile" title="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme"
+                    title="Toggle theme">
+                    <i class="fas fa-moon theme-icon-dark"></i>
+                    <i class="fas fa-sun theme-icon-light"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+
+        <div class="hero-container">
+            <div class="hero-chip">
+                <i class="fas fa-sparkles"></i> Engineering Portfolio & Project Gallery
+            </div>
+
+            <h1 class="hero-title">
+                Building <span class="gradient-text">Scalable Solutions</span> & Intelligent Systems
+            </h1>
+
+            <p class="hero-description">
+                Explore a curated collection of production-grade full stack applications, AI/ML integrations, and
+                cybersecurity tools engineered with performance, security, and exceptional user experience.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="hero-total-count">20+</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">Full Stack</span>
+                    <span class="stat-label">Next.js & MERN</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">AI & RAG</span>
+                    <span class="stat-label">LLMs & Vectors</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">Security</span>
+                    <span class="stat-label">IDS & Analysis</span>
+                </div>
+            </div>
+
+            <div class="hero-cta-group">
+                <a href="#projects-section" class="hero-btn primary-btn">
+                    <i class="fas fa-layer-group"></i> Explore Projects
+                </a>
+                <a href="https://github.com/LakshayD02" target="_blank" rel="noopener" class="hero-btn secondary-btn">
+                    <i class="fab fa-github"></i> View GitHub
+                </a>
+            </div>
         </div>
     </header>
 
-    <div class="filter-container">
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">ALL</button>
-            <button class="filter-btn" data-filter="fullstack">FULL STACK APPS</button>
-            <button class="filter-btn" data-filter="python">PYTHON & AI</button>
-            <button class="filter-btn" data-filter="cybersecurity">CYBERSECURITY</button>
-            <button class="filter-btn" data-filter="others">OTHERS</button>
-        </div>
-    </div>
+    <!-- Search & Filter Controls -->
+    <section class="controls-section" id="projects-section">
+        <div class="controls-container">
+            <div class="search-box-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="project-search" class="project-search-input"
+                    placeholder="Search by title, technology (e.g. Next.js, Python, MongoDB), or keyword..."
+                    autocomplete="off" aria-label="Search projects" />
+                <button id="clear-search" class="clear-search-btn" aria-label="Clear search" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
 
-    <div class="container">
-        <div class="projects-grid">
+            <div class="filter-wrapper">
+                <div class="filter-buttons" role="tablist" aria-label="Project categories">
+                    <button class="filter-btn active" data-filter="all">
+                        <span>All</span> <span class="filter-count" id="count-all"></span>
+                    </button>
+                    <button class="filter-btn" data-filter="fullstack">
+                        <span>Full Stack</span> <span class="filter-count" id="count-fullstack"></span>
+                    </button>
+                    <button class="filter-btn" data-filter="python">
+                        <span>Python & AI</span> <span class="filter-count" id="count-python"></span>
+                    </button>
+                    <button class="filter-btn" data-filter="cybersecurity">
+                        <span>Cybersecurity</span> <span class="filter-count" id="count-cybersecurity"></span>
+                    </button>
+                    <button class="filter-btn" data-filter="others">
+                        <span>Others</span> <span class="filter-count" id="count-others"></span>
+                    </button>
+                </div>
+
+                <div class="results-info">
+                    <span id="results-count-text">Showing all projects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="projects-grid" id="projects-grid">
             <div class="project-card" data-category="fullstack">
                 <img src="./images/SafeSphere.png" alt="SafeSphere AI" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">SafeSphere AI</h2>
-                    <p class="project-description">SafeSphere AI is an advanced, AI-powered threat analysis and fact-checking platform designed to analyze social media content, news articles, and raw text. By leveraging cutting-edge Large Language Models and vector search, it provides real-time risk assessment, deepfake detection, and verifiable fact-checking to ensure digital safety and information integrity.</p>
+                    <p class="project-description">SafeSphere AI is an advanced, AI-powered threat analysis and
+                        fact-checking platform designed to analyze social media content, news articles, and raw text. By
+                        leveraging cutting-edge Large Language Models and vector search, it provides real-time risk
+                        assessment, deepfake detection, and verifiable fact-checking to ensure digital safety and
+                        information integrity.</p>
                     <div class="project-tags">
                         <span class="tag">RAG</span>
                         <span class="tag">Next.js 14</span>
@@ -57,20 +182,27 @@
                         <span class="tag">Openrouter API</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/SafeSphere-AI_Fake_News-_Detection_Platform" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://safesphere-lakshay.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/SafeSphere-AI_Fake_News-_Detection_Platform"
+                            class="project-link github-link" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://safesphere-lakshay.vercel.app/" class="project-link demo-link" target="_blank"
+                            rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
                     <button class="view-more-btn">View More</button>
                 </div>
             </div>
-            
+
             <div class="project-card" data-category="fullstack">
                 <img src="./images/TripPlanner.png" alt="TripPlanner ELD - FMCSA Route Planner" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">TripPlanner ELD: Route Planner</h2>
-                    <p class="project-description">TripPlanner ELD is an FMCSA-compliant route planning platform for commercial truck drivers and fleet operators. It automates multi-day trip scheduling, Hours of Service (HOS) compliance, fuel and rest-stop planning, and generates interactive Electronic Logging Device (ELD) daily logs, helping drivers plan safer, regulation-compliant routes through an intuitive dashboard.</p>
+                    <p class="project-description">TripPlanner ELD is an FMCSA-compliant route planning platform for
+                        commercial truck drivers and fleet operators. It automates multi-day trip scheduling, Hours of
+                        Service (HOS) compliance, fuel and rest-stop planning, and generates interactive Electronic
+                        Logging Device (ELD) daily logs, helping drivers plan safer, regulation-compliant routes through
+                        an intuitive dashboard.</p>
                     <div class="project-tags">
                         <span class="tag">React.js</span>
                         <span class="tag">Material UI</span>
@@ -82,20 +214,28 @@
                         <span class="tag">OpenStreetMap API</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/ELD_Route_Planner_Django" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://eld-route-planner-lakshay.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/ELD_Route_Planner_Django"
+                            class="project-link github-link" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://eld-route-planner-lakshay.vercel.app/" class="project-link demo-link"
+                            target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
                     <button class="view-more-btn">View More</button>
                 </div>
             </div>
-            
+
             <div class="project-card" data-category="fullstack">
-                <img src="./images/theadly.png" alt="Threadly - AI-Powered Communication Platform" class="project-image" />
+                <img src="./images/theadly.png" alt="Threadly - AI-Powered Communication Platform"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Threadly AI - B2B SaaS Platform</h2>
-                    <p class="project-description">Threadly AI is a next-generation team communication platform that combines real-time messaging, AI-powered insights, and intelligent thread organization to help teams communicate more effectively and reduce information overload. The platform features practical architecture, intuitive navigation, and dependable workflows to support real user needs and deliver a consistent experience across devices.</p>
+                    <p class="project-description">Threadly AI is a next-generation team communication platform that
+                        combines real-time messaging, AI-powered insights, and intelligent thread organization to help
+                        teams communicate more effectively and reduce information overload. The platform features
+                        practical architecture, intuitive navigation, and dependable workflows to support real user
+                        needs and deliver a consistent experience across devices.</p>
                     <div class="project-tags">
                         <span class="tag">TypeScript</span>
                         <span class="tag">Next.js</span>
@@ -106,20 +246,27 @@
                         <span class="tag">PostgreSQL</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Threadly_AI_B2B_Communication_SaaS.git" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://threadly-ai-lakshay.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Threadly_AI_B2B_Communication_SaaS.git"
+                            class="project-link github-link" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://threadly-ai-lakshay.vercel.app/" class="project-link demo-link" target="_blank"
+                            rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
                     <button class="view-more-btn">View More</button>
                 </div>
             </div>
-            
+
             <div class="project-card" data-category="others">
                 <img src="./images/NutritionSense.png" alt="NutriSense" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">NutriSense - AI Nutrition Assistant</h2>
-                    <p class="project-description">NutriSense is a high-performance, AI-powered smart nutrition assistant that provides real-time, context-aware meal tracking and personalized coaching. Leveraging Groq's ultra-fast Llama 3.1 models, it allows users to log meals using natural language or images, instantly calculating macros, offering healthier alternatives, and scoring choices based on personal fitness goals and dietary restrictions.</p>
+                    <p class="project-description">NutriSense is a high-performance, AI-powered smart nutrition
+                        assistant that provides real-time, context-aware meal tracking and personalized coaching.
+                        Leveraging Groq's ultra-fast Llama 3.1 models, it allows users to log meals using natural
+                        language or images, instantly calculating macros, offering healthier alternatives, and scoring
+                        choices based on personal fitness goals and dietary restrictions.</p>
                     <div class="project-tags">
                         <span class="tag">Nextjs 15</span>
                         <span class="tag">TypeScript</span>
@@ -129,8 +276,11 @@
                         <span class="tag">Lucide React</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/NutriSense-AI-Powered-Nutrition-Assistant" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://nutrisense-lakshay.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/NutriSense-AI-Powered-Nutrition-Assistant"
+                            class="project-link github-link" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://nutrisense-lakshay.vercel.app/" class="project-link demo-link" target="_blank"
+                            rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -142,7 +292,11 @@
                 <img src="./images/carvix.png" alt="Carvix - AI-Powered Car Marketplace" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Carvix AI: Car Marketplace</h2>
-                    <p class="project-description">Carvix is a modern, full-stack SaaS platform revolutionizing car buying with AI-powered image search, automated data extraction, and seamless test drive booking. The platform features practical architecture, intuitive navigation, and dependable workflows to support real user needs, improve usability, and deliver a consistent end-to-end experience across devices.</p>
+                    <p class="project-description">Carvix is a modern, full-stack SaaS platform revolutionizing car
+                        buying with AI-powered image search, automated data extraction, and seamless test drive booking.
+                        The platform features practical architecture, intuitive navigation, and dependable workflows to
+                        support real user needs, improve usability, and deliver a consistent end-to-end experience
+                        across devices.</p>
                     <div class="project-tags">
                         <span class="tag">TypeScript</span>
                         <span class="tag">Next.js</span>
@@ -153,8 +307,11 @@
                         <span class="tag">PostgreSQL</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Carvix_AI_Powered_Car_Marketplace.git" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://carvix-ai-lakshay.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Carvix_AI_Powered_Car_Marketplace.git"
+                            class="project-link github-link" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://carvix-ai-lakshay.vercel.app/" class="project-link demo-link" target="_blank"
+                            rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -162,11 +319,15 @@
                 </div>
             </div>
 
-             <div class="project-card" data-category="others">
+            <div class="project-card" data-category="others">
                 <img src="./images/MacOS.png" alt="College Event Management System" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">MacOS Portfolio Website</h2>
-                    <p class="project-description">A macOS-inspired interactive portfolio built with Next.js and Tailwind CSS, featuring a realistic desktop UI with dark/light mode, draggable windows, Spotlight search, and multiple apps like Terminal, VSCode, Safari, and Mail. Includes boot/login sequences, Control Center, and responsive, optimized performance for showcasing projects and skills.</p>
+                    <p class="project-description">A macOS-inspired interactive portfolio built with Next.js and
+                        Tailwind CSS, featuring a realistic desktop UI with dark/light mode, draggable windows,
+                        Spotlight search, and multiple apps like Terminal, VSCode, Safari, and Mail. Includes boot/login
+                        sequences, Control Center, and responsive, optimized performance for showcasing projects and
+                        skills.</p>
                     <div class="project-tags">
                         <span class="tag">NextJs</span>
                         <span class="tag">Tailwind CSS</span>
@@ -175,22 +336,27 @@
                         <span class="tag">MacOS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Lakshay_MacOS_Portfolio" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://lakshay-macos.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Lakshay_MacOS_Portfolio" class="project-link github-link"
+                            target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://lakshay-macos.vercel.app/" class="project-link demo-link" target="_blank"
+                            rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
                     <button class="view-more-btn">View More</button>
                 </div>
             </div>
-            
-             <div class="project-card" data-category="fullstack">
+
+            <div class="project-card" data-category="fullstack">
                 <img src="./images/Placement.png" alt="College Event Management System" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">IIC Placement Website</h2>
-                    <p class="project-description">The IIC Placement Website is a comprehensive platform designed to facilitate the placement process for students at the Institute of Informatics and Communication, University of Delhi. Stay updated with the latest industry trends, career advice, and placement opportunities.</p>
+                    <p class="project-description">The IIC Placement Website is a comprehensive platform designed to
+                        facilitate the placement process for students at the Institute of Informatics and Communication,
+                        University of Delhi. Stay updated with the latest industry trends, career advice, and placement
+                        opportunities.</p>
                     <div class="project-tags">
-                         <span class="tag">React</span>
+                        <span class="tag">React</span>
                         <span class="tag">TypeScript</span>
                         <span class="tag">Tailwindcss</span>
                         <span class="tag">Material-UI</span>
@@ -198,20 +364,27 @@
                         <span class="tag">React-hooks</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/IIC_Placement_Website" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://iic-placements.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/IIC_Placement_Website" class="project-link github-link"
+                            target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://iic-placements.vercel.app/" class="project-link demo-link" target="_blank"
+                            rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
                     <button class="view-more-btn">View More</button>
                 </div>
             </div>
-            
-             <div class="project-card" data-category="fullstack">
+
+            <div class="project-card" data-category="fullstack">
                 <img src="./images/college-event.png" alt="College Event Management System" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">College Event Management System</h2>
-                    <p class="project-description">A full-stack College Event Management System using React (Vite) and Tailwind CSS for a fast, responsive frontend, with MongoDB for backend data management. Implemented secure admin and user authentication, allowing users to register, log in, and enroll in college events while tracking their registered activities. Built an admin dashboard to create, update, and manage events, as well as view and manage user registrations for each event.</p>
+                    <p class="project-description">A full-stack College Event Management System using React (Vite) and
+                        Tailwind CSS for a fast, responsive frontend, with MongoDB for backend data management.
+                        Implemented secure admin and user authentication, allowing users to register, log in, and enroll
+                        in college events while tracking their registered activities. Built an admin dashboard to
+                        create, update, and manage events, as well as view and manage user registrations for each event.
+                    </p>
                     <div class="project-tags">
                         <span class="tag">MongoDB</span>
                         <span class="tag">Node.js</span>
@@ -219,8 +392,11 @@
                         <span class="tag">JavaScript</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/College_Event_Backend_New.git" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://college-event-frontend-98y0.onrender.com/" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/College_Event_Backend_New.git"
+                            class="project-link github-link" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://college-event-frontend-98y0.onrender.com/" class="project-link demo-link"
+                            target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -232,7 +408,10 @@
                 <img src="https://i.ibb.co/LXJJM7W3/IICUDSC.png" alt="IIC - UDSC Website" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">IIC - UDSC Website</h2>
-                    <p class="project-description">The IIC website serves as a comprehensive platform to showcase the institute's programs, faculty, events, and other important information. It is designed to provide a seamless and engaging user experience, with a focus on accessibility and responsiveness using TypeScript, Next.js and Tailwind CSS.</p>
+                    <p class="project-description">The IIC website serves as a comprehensive platform to showcase the
+                        institute's programs, faculty, events, and other important information. It is designed to
+                        provide a seamless and engaging user experience, with a focus on accessibility and
+                        responsiveness using TypeScript, Next.js and Tailwind CSS.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">TypeScript</span>
@@ -242,8 +421,10 @@
                         <span class="tag">React-hooks</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://iic-udsc.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02" target="_blank" class="project-link github-link"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://iic-udsc.vercel.app/" target="_blank" class="project-link demo-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -252,10 +433,14 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://i.ibb.co/Tz3wqdY/Project-uber.png" alt="Full Stack Uber Clone" class="project-image" />
+                <img src="https://i.ibb.co/Tz3wqdY/Project-uber.png" alt="Full Stack Uber Clone"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">RideX - Riding App</h2>
-                    <p class="project-description">This full stack MERN application emulates the core features of the popular ride-hailing service Uber. The platform features practical architecture, intuitive navigation, and dependable workflows to support real user needs, improve usability, and deliver a consistent end-to-end experience across devices.</p>
+                    <p class="project-description">This full stack MERN application emulates the core features of the
+                        popular ride-hailing service Uber. The platform features practical architecture, intuitive
+                        navigation, and dependable workflows to support real user needs, improve usability, and deliver
+                        a consistent end-to-end experience across devices.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">TailwindCSS</span>
@@ -265,8 +450,10 @@
                         <span class="tag">Express.js</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Full_Stack_Uber_Clone.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://ridex-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Full_Stack_Uber_Clone.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://ridex-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -275,10 +462,14 @@
             </div>
 
             <div class="project-card" data-category="cybersecurity">
-                <img src="./images/bypass.png" alt="AI Evasion Tool - Professional Red Teaming Framework" class="project-image" />
+                <img src="./images/bypass.png" alt="AI Evasion Tool - Professional Red Teaming Framework"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">BypassX: AI Evasion Tool</h2>
-                    <p class="project-description">An advanced tool for testing AI-based security systems with sophisticated evasion techniques. This professional red teaming framework simulates various attack vectors while employing multiple evasion strategies to bypass AI-powered detection systems.</p>
+                    <p class="project-description">An advanced tool for testing AI-based security systems with
+                        sophisticated evasion techniques. This professional red teaming framework simulates various
+                        attack vectors while employing multiple evasion strategies to bypass AI-powered detection
+                        systems.</p>
                     <div class="project-tags">
                         <span class="tag">Python 3.8+</span>
                         <span class="tag">Scikit-learn</span>
@@ -289,8 +480,12 @@
                         <span class="tag">Seaborn</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/BypassX-AI-Evasion-Tool-Python.git" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/BypassX-AI-Evasion-Tool-Python.git" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/BypassX-AI-Evasion-Tool-Python.git"
+                            class="project-link github-link" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/BypassX-AI-Evasion-Tool-Python.git"
+                            class="project-link demo-link" target="_blank" rel="noopener"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -299,10 +494,14 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://i.ibb.co/nqR0cxbJ/Carbonwise.png" alt="Carbonwise: Track Carbon" class="project-image" />
+                <img src="https://i.ibb.co/nqR0cxbJ/Carbonwise.png" alt="Carbonwise: Track Carbon"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Carbonwise: Track Carbon</h2>
-                    <p class="project-description">CarbonWise is a comprehensive web application designed to help individuals track, analyze, and reduce their carbon footprint through intelligent activity logging, goal setting, and community engagement. The platform features practical architecture and intuitive workflows to deliver a consistent experience across devices.</p>
+                    <p class="project-description">CarbonWise is a comprehensive web application designed to help
+                        individuals track, analyze, and reduce their carbon footprint through intelligent activity
+                        logging, goal setting, and community engagement. The platform features practical architecture
+                        and intuitive workflows to deliver a consistent experience across devices.</p>
                     <div class="project-tags">
                         <span class="tag">TypeScript</span>
                         <span class="tag">Next.js</span>
@@ -313,8 +512,11 @@
                         <span class="tag">Recharts</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/CarbonWise-Carbon-Tracker.git" class="project-link github-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://carbonwise-lakshay.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/CarbonWise-Carbon-Tracker.git"
+                            class="project-link github-link" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://carbonwise-lakshay.vercel.app/" class="project-link demo-link" target="_blank"
+                            rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -323,10 +525,14 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://user-images.githubusercontent.com/64949957/153996560-bd631f30-46f0-4248-83b3-d8ce44a8f9e4.PNG" alt="FlipkartClone - Full-Stack E-commerce Platform" class="project-image" />
+                <img src="https://user-images.githubusercontent.com/64949957/153996560-bd631f30-46f0-4248-83b3-d8ce44a8f9e4.PNG"
+                    alt="FlipkartClone - Full-Stack E-commerce Platform" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Shopmart: E-commerce Platform</h2>
-                    <p class="project-description">FlipkartClone is an e-commerce platform meticulously crafted to replicate the renowned functionalities of Flipkart. Built using the LAMP stack along with HTML, CSS3, JavaScript, Tailwind CSS, jQuery, PHP, and MySQL, this repository offers a comprehensive solution for creating a robust online marketplace.</p>
+                    <p class="project-description">FlipkartClone is an e-commerce platform meticulously crafted to
+                        replicate the renowned functionalities of Flipkart. Built using the LAMP stack along with HTML,
+                        CSS3, JavaScript, Tailwind CSS, jQuery, PHP, and MySQL, this repository offers a comprehensive
+                        solution for creating a robust online marketplace.</p>
                     <div class="project-tags">
                         <span class="tag">PHP</span>
                         <span class="tag">MySQL</span>
@@ -336,8 +542,10 @@
                         <span class="tag">JavaScript</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/FullStack-Flipkart-Clone.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/FullStack-Flipkart-Clone.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/FullStack-Flipkart-Clone.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/FullStack-Flipkart-Clone.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -346,10 +554,14 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://user-images.githubusercontent.com/16975766/28489136-9c9930a0-6ed8-11e7-85a0-af4d73f63cd7.png" alt="Online Notes Sharing System" class="project-image" />
+                <img src="https://user-images.githubusercontent.com/16975766/28489136-9c9930a0-6ed8-11e7-85a0-af4d73f63cd7.png"
+                    alt="Online Notes Sharing System" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Online Notes Sharing System</h2>
-                    <p class="project-description">Online Notes Sharing System is a web application designed to facilitate seamless sharing of notes among users. Built with HTML, CSS, JavaScript, jQuery, AJAX, PHP, and MySQL, this system offers a robust platform for users to create accounts, sign in securely, and share their notes effortlessly by uploading files.</p>
+                    <p class="project-description">Online Notes Sharing System is a web application designed to
+                        facilitate seamless sharing of notes among users. Built with HTML, CSS, JavaScript, jQuery,
+                        AJAX, PHP, and MySQL, this system offers a robust platform for users to create accounts, sign in
+                        securely, and share their notes effortlessly by uploading files.</p>
                     <div class="project-tags">
                         <span class="tag">CSS</span>
                         <span class="tag">JavaScript</span>
@@ -359,8 +571,10 @@
                         <span class="tag">MySQL</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Online_Notes_Sharing_System.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Online_Notes_Sharing_System.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Online_Notes_Sharing_System.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Online_Notes_Sharing_System.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -369,10 +583,14 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://i.ibb.co/dbhFDTb/blogger.png" alt="Blogger - Blog Application" class="project-image" />
+                <img src="https://i.ibb.co/dbhFDTb/blogger.png" alt="Blogger - Blog Application"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Blogger - Blog Application</h2>
-                    <p class="project-description">Blogger is a comprehensive full stack web application designed for seamless blog management and user interaction. Built using HTML, CSS, JavaScript, Bootstrap, Flask, Python, and MySQL/SQLite for database management, this application provides an intuitive and engaging blogging platform.</p>
+                    <p class="project-description">Blogger is a comprehensive full stack web application designed for
+                        seamless blog management and user interaction. Built using HTML, CSS, JavaScript, Bootstrap,
+                        Flask, Python, and MySQL/SQLite for database management, this application provides an intuitive
+                        and engaging blogging platform.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Flask</span>
@@ -383,8 +601,10 @@
                         <span class="tag">JavaScript</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Full_Stack_Blog_Application_Flask.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Full_Stack_Blog_Application_Flask.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Full_Stack_Blog_Application_Flask.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Full_Stack_Blog_Application_Flask.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -396,7 +616,10 @@
                 <img src="https://i.ibb.co/fYdwsWR/Project-13.png" alt="CipherGPT - AI Chatbot" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">CipherGPT - AI Chatbot</h2>
-                    <p class="project-description">CipherGPT is an advanced SAAS chatbot AI meticulously crafted using the MERN stack (MongoDB, Express.js, React.js, Node.js) coupled with TypeScript and the OpenAI API. The platform features practical architecture and intuitive navigation to deliver a consistent experience across devices.</p>
+                    <p class="project-description">CipherGPT is an advanced SAAS chatbot AI meticulously crafted using
+                        the MERN stack (MongoDB, Express.js, React.js, Node.js) coupled with TypeScript and the OpenAI
+                        API. The platform features practical architecture and intuitive navigation to deliver a
+                        consistent experience across devices.</p>
                     <div class="project-tags">
                         <span class="tag">TailwindCSS</span>
                         <span class="tag">React</span>
@@ -407,8 +630,10 @@
                         <span class="tag">OpenAI API</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/FullStack_SaaS_ChatBot_CipherGPT.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://ciphergpt-chatbot.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/FullStack_SaaS_ChatBot_CipherGPT.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://ciphergpt-chatbot.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -417,10 +642,14 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://i.ibb.co/Ctkzqy2/Project-1.png" alt="Job Portal Website - MERN" class="project-image" />
+                <img src="https://i.ibb.co/Ctkzqy2/Project-1.png" alt="Job Portal Website - MERN"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Job Portal Website - MERN</h2>
-                    <p class="project-description">MERN Stack job portal where users can filter job listings by title, location, and posting time. The platform features practical architecture, intuitive navigation, and dependable workflows to support real user needs and deliver a consistent experience across devices.</p>
+                    <p class="project-description">MERN Stack job portal where users can filter job listings by title,
+                        location, and posting time. The platform features practical architecture, intuitive navigation,
+                        and dependable workflows to support real user needs and deliver a consistent experience across
+                        devices.</p>
                     <div class="project-tags">
                         <span class="tag">TailwindCSS</span>
                         <span class="tag">React</span>
@@ -429,8 +658,10 @@
                         <span class="tag">Authentication</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/MERN_Job_Portal_Website.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://jobjunction-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/MERN_Job_Portal_Website.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://jobjunction-lakshay.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -442,7 +673,10 @@
                 <img src="https://i.ibb.co/bB3MFn0/Project-2.png" alt="MedTech - HMS" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">MedTech - HMS</h2>
-                    <p class="project-description">Medtech is a Hospital Management System (HMS), a solution designed to modernize hospital operations by digitizing and automating various administrative tasks. The platform features practical architecture and intuitive navigation to support real user needs.</p>
+                    <p class="project-description">Medtech is a Hospital Management System (HMS), a solution designed to
+                        modernize hospital operations by digitizing and automating various administrative tasks. The
+                        platform features practical architecture and intuitive navigation to support real user needs.
+                    </p>
                     <div class="project-tags">
                         <span class="tag">jquery</span>
                         <span class="tag">PHP</span>
@@ -453,8 +687,10 @@
                         <span class="tag">SCSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/MedTech-Hospital-Management-System.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/MedTech-Hospital-Management-System.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/MedTech-Hospital-Management-System.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/MedTech-Hospital-Management-System.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -463,10 +699,14 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://i.ibb.co/4Mng3tk/Project-16.png" alt="SMS - Student Management" class="project-image" />
+                <img src="https://i.ibb.co/4Mng3tk/Project-16.png" alt="SMS - Student Management"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Student Management System</h2>
-                    <p class="project-description">SMS acts as the bottom line database to store and maintain all daily school operations. The platform features practical architecture, intuitive navigation, and dependable workflows to support real user needs and deliver a consistent experience across devices.</p>
+                    <p class="project-description">SMS acts as the bottom line database to store and maintain all daily
+                        school operations. The platform features practical architecture, intuitive navigation, and
+                        dependable workflows to support real user needs and deliver a consistent experience across
+                        devices.</p>
                     <div class="project-tags">
                         <span class="tag">jquery</span>
                         <span class="tag">PHP</span>
@@ -477,8 +717,10 @@
                         <span class="tag">SCSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Student_Management_System.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Student_Management_System.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Student_Management_System.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Student_Management_System.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -487,10 +729,14 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://i.ibb.co/hRMrhrg/Project-14.png" alt="Project Management System" class="project-image" />
+                <img src="https://i.ibb.co/hRMrhrg/Project-14.png" alt="Project Management System"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Project Management System</h2>
-                    <p class="project-description">A platform designed to help individuals and teams effectively plan, track, and manage projects. The system features practical architecture, intuitive navigation, and dependable workflows to support real user needs and deliver a consistent experience across devices.</p>
+                    <p class="project-description">A platform designed to help individuals and teams effectively plan,
+                        track, and manage projects. The system features practical architecture, intuitive navigation,
+                        and dependable workflows to support real user needs and deliver a consistent experience across
+                        devices.</p>
                     <div class="project-tags">
                         <span class="tag">jquery</span>
                         <span class="tag">PHP</span>
@@ -501,8 +747,10 @@
                         <span class="tag">SCSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Project-Management-System.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Project-Management-System.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Project-Management-System.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Project-Management-System.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -511,10 +759,14 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://i.ibb.co/6wqNRY8/Project-5.png" alt="BikeThrills - Full Stack Bike Renting Website" class="project-image" />
+                <img src="https://i.ibb.co/6wqNRY8/Project-5.png" alt="BikeThrills - Full Stack Bike Renting Website"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">BikeThrills - Bike Renting Website</h2>
-                    <p class="project-description">BikeThrills is a full-stack responsive bike renting platform designed to make your bike rental experience quick and easy. Whether you need a bike for a casual ride or a longer trip, you can find a variety of bikes available for rent with a smooth, user-friendly interface.</p>
+                    <p class="project-description">BikeThrills is a full-stack responsive bike renting platform designed
+                        to make your bike rental experience quick and easy. Whether you need a bike for a casual ride or
+                        a longer trip, you can find a variety of bikes available for rent with a smooth, user-friendly
+                        interface.</p>
                     <div class="project-tags">
                         <span class="tag">jquery</span>
                         <span class="tag">PHP</span>
@@ -525,8 +777,10 @@
                         <span class="tag">CSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Bikethrills-Website.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Bikethrills-Website.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Bikethrills-Website.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Bikethrills-Website.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -535,10 +789,15 @@
             </div>
 
             <div class="project-card" data-category="fullstack">
-                <img src="https://cdn.sanity.io/images/ordgikwe/production/4753faef984b5a5b95dae4c78caa40325d1201cf-1600x1200.jpg?w=1600&h=1200&auto=format" alt="E-Learning Website (E-Learn) with Full-Stack Development" class="project-image" />
+                <img src="https://cdn.sanity.io/images/ordgikwe/production/4753faef984b5a5b95dae4c78caa40325d1201cf-1600x1200.jpg?w=1600&h=1200&auto=format"
+                    alt="E-Learning Website (E-Learn) with Full-Stack Development" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">E-Learning Website</h2>
-                    <p class="project-description">A Full-Stack E-Learning Website built using HTML, CSS, JavaScript, AJAX, jQuery, PHP, and MySQL. This platform allows users to sign up as either students or tutors, providing a comprehensive online learning experience. Tutors can create and upload video-based courses, while students can watch, comment, like, and save their favorite playlists.</p>
+                    <p class="project-description">A Full-Stack E-Learning Website built using HTML, CSS, JavaScript,
+                        AJAX, jQuery, PHP, and MySQL. This platform allows users to sign up as either students or
+                        tutors, providing a comprehensive online learning experience. Tutors can create and upload
+                        video-based courses, while students can watch, comment, like, and save their favorite playlists.
+                    </p>
                     <div class="project-tags">
                         <span class="tag">jquery</span>
                         <span class="tag">PHP</span>
@@ -549,8 +808,10 @@
                         <span class="tag">CSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/E-Learning_Website.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/E-Learning_Website.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/E-Learning_Website.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/E-Learning_Website.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -562,7 +823,10 @@
                 <img src="https://i.ibb.co/GM63w8M/Project-3.png" alt="Movie Booking System" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Movie Booking System</h2>
-                    <p class="project-description">INOX Theatre Movie Booking is an online movie booking platform designed to emulate the renowned INOX theater experience in Rajouri Garden. Built using HTML, CSS3, JavaScript, Bootstrap, jQuery, PHP, and MySQL, this repository houses the complete source code to deploy and operate a seamless movie booking website.</p>
+                    <p class="project-description">INOX Theatre Movie Booking is an online movie booking platform
+                        designed to emulate the renowned INOX theater experience in Rajouri Garden. Built using HTML,
+                        CSS3, JavaScript, Bootstrap, jQuery, PHP, and MySQL, this repository houses the complete source
+                        code to deploy and operate a seamless movie booking website.</p>
                     <div class="project-tags">
                         <span class="tag">jquery</span>
                         <span class="tag">PHP</span>
@@ -573,8 +837,10 @@
                         <span class="tag">SCSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/INOX-Theatre-Movie-Booking-System.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/INOX-Theatre-Movie-Booking-System.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/INOX-Theatre-Movie-Booking-System.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/INOX-Theatre-Movie-Booking-System.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -586,7 +852,10 @@
                 <img src="https://i.ibb.co/m42qRh1/lms.png" alt="LMS - Library Management" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">LMS - Library Management</h2>
-                    <p class="project-description">A Full Stack Library Management System designed to help students and administrators manage books in a digital library environment. With features for managing book records, issuing and returning books, and tracking inventory, this system simplifies library operations.</p>
+                    <p class="project-description">A Full Stack Library Management System designed to help students and
+                        administrators manage books in a digital library environment. With features for managing book
+                        records, issuing and returning books, and tracking inventory, this system simplifies library
+                        operations.</p>
                     <div class="project-tags">
                         <span class="tag">jquery</span>
                         <span class="tag">PHP</span>
@@ -597,8 +866,10 @@
                         <span class="tag">SCSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/The-Library-Zone_LMS.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/The-Library-Zone_LMS.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/The-Library-Zone_LMS.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/The-Library-Zone_LMS.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -610,7 +881,9 @@
                 <img src="https://i.ibb.co/GM63w8M/Project-3.png" alt="E-commerce Store App" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">E-commerce Store App</h2>
-                    <p class="project-description">Online Shopping Website/Portal is an application which allows customers to shop virtually and buy items and articles of their desire from the store. It is designed using HTML, CSS, JavaScript, Jquery, AJAX, PHP and MySQL.</p>
+                    <p class="project-description">Online Shopping Website/Portal is an application which allows
+                        customers to shop virtually and buy items and articles of their desire from the store. It is
+                        designed using HTML, CSS, JavaScript, Jquery, AJAX, PHP and MySQL.</p>
                     <div class="project-tags">
                         <span class="tag">jquery</span>
                         <span class="tag">PHP</span>
@@ -621,32 +894,40 @@
                         <span class="tag">SCSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Online_Shopping_Website.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Online_Shopping_Website.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Online_Shopping_Website.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Online_Shopping_Website.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
                     <button class="view-more-btn">View More</button>
                 </div>
             </div>
-            
+
             <div class="project-card" data-category="others">
                 <img src="./images/Gamified.png" alt="Gamified" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">3D Gamified Portfolio</h2>
-                    <p class="project-description">An immersive 3D portfolio where visitors drive through a virtual world to discover professional information. Featuring realistic vehicle controls, collectible energy nodes, progressive content unlocking, responsive cross-platform design, and interactive sections for skills, experience, projects, and contact, it delivers an engaging, game-inspired showcase built with Three.js and JavaScript.</p>
+                    <p class="project-description">An immersive 3D portfolio where visitors drive through a virtual
+                        world to discover professional information. Featuring realistic vehicle controls, collectible
+                        energy nodes, progressive content unlocking, responsive cross-platform design, and interactive
+                        sections for skills, experience, projects, and contact, it delivers an engaging, game-inspired
+                        showcase built with Three.js and JavaScript.</p>
                     <div class="project-tags">
-                      <span class="tag">Three.js</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
-                    <span class="tag">WebGL</span>
-                    <span class="tag">Web Audio API</span>
-                    <span class="tag">Responsive Design</span>
+                        <span class="tag">Three.js</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">WebGL</span>
+                        <span class="tag">Web Audio API</span>
+                        <span class="tag">Responsive Design</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Gamified_portfolio_Threejs" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://lakshaydhoundiyal-gamified.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Gamified_portfolio_Threejs" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://lakshaydhoundiyal-gamified.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -658,7 +939,9 @@
                 <img src="https://i.ibb.co/5YS1xZz/NLP-Model.png" alt="NLP Generation AI Model" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">NLP Generation AI Model</h2>
-                    <p class="project-description">Leverages a pre-trained language model (GPT-2) to generate human-like text based on user prompts. The platform features practical architecture and intuitive navigation to support real user needs and deliver a consistent experience.</p>
+                    <p class="project-description">Leverages a pre-trained language model (GPT-2) to generate human-like
+                        text based on user prompts. The platform features practical architecture and intuitive
+                        navigation to support real user needs and deliver a consistent experience.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Transformers</span>
@@ -666,8 +949,11 @@
                         <span class="tag">natural-language-processing</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Natural_Language_Generation_AIModel_Python.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Natural_Language_Generation_AIModel_Python.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Natural_Language_Generation_AIModel_Python.git"
+                            target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Natural_Language_Generation_AIModel_Python.git"
+                            target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live
+                            Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -679,15 +965,20 @@
                 <img src="https://i.ibb.co/mJjs0hy/Flappy.webp" alt="Flappy Bird Game" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Flappy Bird Game</h2>
-                    <p class="project-description">An endless Flappy Bird game built using Python and the pygame library. The objective is to control a bird and prevent it from colliding with obstacles like pipes or falling to the ground. Every time the bird successfully passes through the pipes, your score increases by one.</p>
+                    <p class="project-description">An endless Flappy Bird game built using Python and the pygame
+                        library. The objective is to control a bird and prevent it from colliding with obstacles like
+                        pipes or falling to the ground. Every time the bird successfully passes through the pipes, your
+                        score increases by one.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">pygame</span>
                         <span class="tag">python-library</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/FlappyBirdGame-Python.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/FlappyBirdGame-Python.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/FlappyBirdGame-Python.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/FlappyBirdGame-Python.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -699,15 +990,20 @@
                 <img src="https://i.ibb.co/mzXKMY5/PVT.png" alt="Pathfinding Visualize Tool" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Pathfinding Visualize Tool</h2>
-                    <p class="project-description">Allows users to visualize the behavior of two popular pathfinding algorithms: A* and BFS. The tool features practical architecture and intuitive navigation to support real user needs and deliver a consistent experience across devices.</p>
+                    <p class="project-description">Allows users to visualize the behavior of two popular pathfinding
+                        algorithms: A* and BFS. The tool features practical architecture and intuitive navigation to
+                        support real user needs and deliver a consistent experience across devices.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">pygame</span>
                         <span class="tag">python-library</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Pathfinding_Visualization_Tool_Python.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Pathfinding_Visualization_Tool_Python.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Pathfinding_Visualization_Tool_Python.git"
+                            target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Pathfinding_Visualization_Tool_Python.git"
+                            target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live
+                            Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -719,7 +1015,9 @@
                 <img src="https://i.ibb.co/7W6QJtF/HDR.png" alt="Handwriting Recognition App" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Handwriting Recognition App</h2>
-                    <p class="project-description">A simple AI model that can recognize handwritten digits built using Python. The platform features practical architecture and intuitive navigation to support real user needs and deliver a consistent experience across devices.</p>
+                    <p class="project-description">A simple AI model that can recognize handwritten digits built using
+                        Python. The platform features practical architecture and intuitive navigation to support real
+                        user needs and deliver a consistent experience across devices.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">AI</span>
@@ -727,8 +1025,10 @@
                         <span class="tag">Scikit-learn</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Handwritten_Digital_Recognition.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Handwritten_Digital_Recognition.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Handwritten_Digital_Recognition.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Handwritten_Digital_Recognition.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -740,7 +1040,10 @@
                 <img src="https://i.ibb.co/45HWPWd/Luxkeys.png" alt="LuxKeys: Keyboard SaaS" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">LuxKeys: Keyboard SaaS</h2>
-                    <p class="project-description">LUXKEYS is a modern, responsive e-commerce website for premium mechanical keyboards built with Next.js and React. This project showcases a feature-rich online store with parallax effects, animations, user authentication, shopping cart functionality, and more.</p>
+                    <p class="project-description">LUXKEYS is a modern, responsive e-commerce website for premium
+                        mechanical keyboards built with Next.js and React. This project showcases a feature-rich online
+                        store with parallax effects, animations, user authentication, shopping cart functionality, and
+                        more.</p>
                     <div class="project-tags">
                         <span class="tag">Next.js</span>
                         <span class="tag">TypeScript</span>
@@ -748,8 +1051,10 @@
                         <span class="tag">Lucide React</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Luxkeys_Keyboard_SaaS_Brand.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://luxkeys-keyboard-brand-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Luxkeys_Keyboard_SaaS_Brand.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://luxkeys-keyboard-brand-lakshay.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -761,7 +1066,9 @@
                 <img src="./images/spotify.png" alt="Spotify Clone" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Spotify Clone</h2>
-                    <p class="project-description">This project is a Spotify clone built using React JS and Styled Components. It leverages the Spotify API to provide a near-authentic music streaming experience with practical architecture and intuitive navigation.</p>
+                    <p class="project-description">This project is a Spotify clone built using React JS and Styled
+                        Components. It leverages the Spotify API to provide a near-authentic music streaming experience
+                        with practical architecture and intuitive navigation.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">CSS</span>
@@ -769,8 +1076,10 @@
                         <span class="tag">Context API</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Spotify_Clone_ReactJs.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://spotify-clone-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Spotify_Clone_ReactJs.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://spotify-clone-lakshay.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -779,10 +1088,13 @@
             </div>
 
             <div class="project-card" data-category="others">
-                <img src="https://miro.medium.com/1*ZB4qwe8cFgbgzvuDLtkPSg.png" alt="Invoice_Generator_ReactJs" class="project-image" />
+                <img src="https://miro.medium.com/1*ZB4qwe8cFgbgzvuDLtkPSg.png" alt="Invoice_Generator_ReactJs"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Invoice Generator</h2>
-                    <p class="project-description">Streamline your invoicing with this React-based Invoice Generator. Quickly create professional invoices, add items, adjust calculations, and generate PDFs. Perfect for freelancers, small businesses, and enterprises.</p>
+                    <p class="project-description">Streamline your invoicing with this React-based Invoice Generator.
+                        Quickly create professional invoices, add items, adjust calculations, and generate PDFs. Perfect
+                        for freelancers, small businesses, and enterprises.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">jspdf-react</span>
@@ -790,8 +1102,10 @@
                         <span class="tag">CSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Invoice_Generator_ReactJs.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://invoice-generator-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Invoice_Generator_ReactJs.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://invoice-generator-lakshay.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -803,7 +1117,9 @@
                 <img src="./images/foodeez.png" alt="Foodeez-Corner" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Foodeez-Corner</h2>
-                    <p class="project-description">A delightful fast food restaurant website built with HTML, CSS, and JavaScript. Showcasing a mouthwatering menu, restaurant information, and offering users the convenience to order now or get in touch.</p>
+                    <p class="project-description">A delightful fast food restaurant website built with HTML, CSS, and
+                        JavaScript. Showcasing a mouthwatering menu, restaurant information, and offering users the
+                        convenience to order now or get in touch.</p>
                     <div class="project-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
@@ -811,8 +1127,10 @@
                         <span class="tag">Bootstrap</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Foodeez-Corner.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://thefoodeezcorner.netlify.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Foodeez-Corner.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://thefoodeezcorner.netlify.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -824,7 +1142,9 @@
                 <img src="https://i.ibb.co/THjSMfj/Project-9.png" alt="Rapid Chat - WhatsApp" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Rapid Chat - WhatsApp</h2>
-                    <p class="project-description">Initiate WhatsApp chats instantly without saving contacts. A React-based web app that streamlines communication with practical architecture and intuitive navigation.</p>
+                    <p class="project-description">Initiate WhatsApp chats instantly without saving contacts. A
+                        React-based web app that streamlines communication with practical architecture and intuitive
+                        navigation.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">JavaScript</span>
@@ -832,8 +1152,10 @@
                         <span class="tag">CSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Rapid-Chat_Whatsapp.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://rapid-chat-whatsapp.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Rapid-Chat_Whatsapp.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://rapid-chat-whatsapp.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -842,10 +1164,13 @@
             </div>
 
             <div class="project-card" data-category="others">
-                <img src="https://i.ibb.co/jTcDZVX/Project-12.png" alt="GitHunt - Github Finder" class="project-image" />
+                <img src="https://i.ibb.co/jTcDZVX/Project-12.png" alt="GitHunt - Github Finder"
+                    class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">GitHunt - Github Finder</h2>
-                    <p class="project-description">With Githunt, users can effortlessly search for GitHub profiles by name or username. The platform features practical architecture and intuitive navigation to support real user needs.</p>
+                    <p class="project-description">With Githunt, users can effortlessly search for GitHub profiles by
+                        name or username. The platform features practical architecture and intuitive navigation to
+                        support real user needs.</p>
                     <div class="project-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">JavaScript</span>
@@ -853,8 +1178,10 @@
                         <span class="tag">React</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/GitHunt_Github_Finder" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://githunt-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/GitHunt_Github_Finder" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://githunt-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -866,7 +1193,9 @@
                 <img src="./images/TaskFlow.png" alt="Responsive Resume Website" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Taskflow - ToDo Application</h2>
-                    <p class="project-description">A modern, feature-rich to-do list application built with React, TypeScript, and Tailwind CSS. TaskFlow Pro combines beautiful design with powerful productivity features to help you organize your life and boost your efficiency.</p>
+                    <p class="project-description">A modern, feature-rich to-do list application built with React,
+                        TypeScript, and Tailwind CSS. TaskFlow Pro combines beautiful design with powerful productivity
+                        features to help you organize your life and boost your efficiency.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">Tailwind CSS</span>
@@ -876,8 +1205,10 @@
                         <span class="tag">ShadCN</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Taskflow-Pro-Todo-List" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://taskflow-todo-list.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Taskflow-Pro-Todo-List" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://taskflow-todo-list.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -889,7 +1220,9 @@
                 <img src="https://i.ibb.co/BzZPYYg/Project-10.png" alt="YouTube Clone" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">YouTube Clone</h2>
-                    <p class="project-description">This project is a modern YouTube clone built using React, Material UI, and the RapidAPI YouTube Data API. It provides a streamlined interface for browsing and searching YouTube videos and channels.</p>
+                    <p class="project-description">This project is a modern YouTube clone built using React, Material
+                        UI, and the RapidAPI YouTube Data API. It provides a streamlined interface for browsing and
+                        searching YouTube videos and channels.</p>
                     <div class="project-tags">
                         <span class="tag">React</span>
                         <span class="tag">RapidAPI</span>
@@ -897,8 +1230,10 @@
                         <span class="tag">YouTube Data API</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Youtube_Clone_React_RapidAPI.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://youtube-clone-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Youtube_Clone_React_RapidAPI.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://youtube-clone-lakshay.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -910,7 +1245,9 @@
                 <img src="https://i.ibb.co/SfwN21k/Project-11.png" alt="Real-Time Weather App" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Real-Time Weather App</h2>
-                    <p class="project-description">A cross-platform weather application built using modern web technologies, providing users with accurate and up-to-date weather information for locations worldwide. Features practical architecture and intuitive navigation.</p>
+                    <p class="project-description">A cross-platform weather application built using modern web
+                        technologies, providing users with accurate and up-to-date weather information for locations
+                        worldwide. Features practical architecture and intuitive navigation.</p>
                     <div class="project-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
@@ -918,8 +1255,10 @@
                         <span class="tag">React</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/React-Weather-App.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://react-weatherapp-lakshay.vercel.app/" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/React-Weather-App.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://react-weatherapp-lakshay.vercel.app/" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -928,10 +1267,13 @@
             </div>
 
             <div class="project-card" data-category="cybersecurity">
-                <img src="https://c8.alamy.com/comp/KPNGK3/manager-touching-intrusion-detection-system-KPNGK3.jpg" alt="Intrusion Detection System (IDS) Using Python and Scapy" class="project-image" />
+                <img src="https://c8.alamy.com/comp/KPNGK3/manager-touching-intrusion-detection-system-KPNGK3.jpg"
+                    alt="Intrusion Detection System (IDS) Using Python and Scapy" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Intrusion Detection System (IDS) Using Python and Scapy</h2>
-                    <p class="project-description">A Python-based Intrusion Detection System (IDS) using Scapy to monitor network traffic for suspicious activity and potential threats. Detect anomalies, block malicious IPs, and log security incidents.</p>
+                    <p class="project-description">A Python-based Intrusion Detection System (IDS) using Scapy to
+                        monitor network traffic for suspicious activity and potential threats. Detect anomalies, block
+                        malicious IPs, and log security incidents.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Scapy</span>
@@ -939,8 +1281,10 @@
                         <span class="tag">logging-library</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Intrusion_Detection_System_Python.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Intrusion_Detection_System_Python.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Intrusion_Detection_System_Python.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Intrusion_Detection_System_Python.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -949,10 +1293,13 @@
             </div>
 
             <div class="project-card" data-category="cybersecurity">
-                <img src="https://denizhalil.com/wp-content/uploads/2023/12/Network-Analysis-with-Scapy-Powerful-Packet-Processing-in-Python.jpg" alt="Network Protocol Analyzer Using Python and Scapy" class="project-image" />
+                <img src="https://denizhalil.com/wp-content/uploads/2023/12/Network-Analysis-with-Scapy-Powerful-Packet-Processing-in-Python.jpg"
+                    alt="Network Protocol Analyzer Using Python and Scapy" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Network Protocol Analyzer Using Python and Scapy</h2>
-                    <p class="project-description">A Python-based Network Protocol Analyzer using Scapy to capture and log network traffic in real-time. Gain insights into network communications for monitoring, analysis, and troubleshooting.</p>
+                    <p class="project-description">A Python-based Network Protocol Analyzer using Scapy to capture and
+                        log network traffic in real-time. Gain insights into network communications for monitoring,
+                        analysis, and troubleshooting.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Scapy</span>
@@ -960,8 +1307,10 @@
                         <span class="tag">network-analyzer</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Network_Protocol_Analyzer_Python.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Network_Protocol_Analyzer_Python.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Network_Protocol_Analyzer_Python.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Network_Protocol_Analyzer_Python.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
@@ -970,10 +1319,13 @@
             </div>
 
             <div class="project-card" data-category="cybersecurity">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZJ5VOoTsA66jt_wQ3kpNjPkiGV7wBtz7Zvs8W1MhteQxgE3w3m_9VRITZHr49eKTFfds&usqp=CAU" alt="Exploit Development Framework / Fuzzing Tool" class="project-image" />
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZJ5VOoTsA66jt_wQ3kpNjPkiGV7wBtz7Zvs8W1MhteQxgE3w3m_9VRITZHr49eKTFfds&usqp=CAU"
+                    alt="Exploit Development Framework / Fuzzing Tool" class="project-image" />
                 <div class="project-content">
                     <h2 class="project-title">Exploit Development Framework / Fuzzing Tool</h2>
-                    <p class="project-description">A C-based exploit development framework and fuzzing tool designed to test application robustness and security by generating random payloads and targeting vulnerabilities. Automate vulnerability discovery and improve application resilience.</p>
+                    <p class="project-description">A C-based exploit development framework and fuzzing tool designed to
+                        test application robustness and security by generating random payloads and targeting
+                        vulnerabilities. Automate vulnerability discovery and improve application resilience.</p>
                     <div class="project-tags">
                         <span class="tag">C</span>
                         <span class="tag">fuzzing</span>
@@ -981,31 +1333,83 @@
                         <span class="tag">fuzzing-tool</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/LakshayD02/Exploit_Development_Framework_C.git" target="_blank" class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://github.com/LakshayD02/Exploit_Development_Framework_C.git" target="_blank" class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/LakshayD02/Exploit_Development_Framework_C.git" target="_blank"
+                            class="project-link github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/LakshayD02/Exploit_Development_Framework_C.git" target="_blank"
+                            class="project-link demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="view-more-overlay">
                     <button class="view-more-btn">View More</button>
                 </div>
             </div>
+
+            <!-- Empty state for search / filtering -->
+            <div id="no-results" class="no-results-state" style="display: none;">
+                <div class="no-results-icon"><i class="fas fa-folder-open"></i></div>
+                <h3 class="no-results-title">No projects match your search</h3>
+                <p class="no-results-desc">Try checking for spelling errors, using broader keywords, or clearing your
+                    current filter.</p>
+                <button id="reset-filters-btn" class="reset-filters-btn">
+                    <i class="fas fa-rotate-left"></i> Reset Search & Filters
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Project Modal -->
+    <div id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <button id="modal-back-btn" class="modal-back-btn" aria-label="Close project modal">
+                    <i class="fas fa-arrow-left"></i> <span>Back</span>
+                </button>
+                <h3 class="modal-title">Project Details</h3>
+                <button id="modal-close-icon" class="modal-close-btn" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content"></div>
         </div>
     </div>
 
-    <div id="project-modal" class="project-modal">
-        <div class="modal-header">
-            <button id="modal-back-btn" class="modal-back-btn">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <h3 class="modal-title">Project Details</h3>
-        </div>
-        <div class="modal-content"></div>
-    </div>
+    <!-- Floating Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top" title="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
+    <!-- Modern Footer -->
     <footer class="footer" role="contentinfo" aria-label="Site footer">
-        <div class="copyright">© <span id="copyright-year"></span> Lakshay Dhoundiyal. All rights reserved.</div>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="brand-avatar">L</span>
+                    <div class="footer-brand-text">
+                        <h3>Lakshay Dhoundiyal</h3>
+                        <p>Building high-impact software, scalable web apps & intelligent solutions.</p>
+                    </div>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/LakshayD02" target="_blank" rel="noopener" class="footer-social-link"
+                        title="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:lakshaydhoundiyal0@example.com" class="footer-social-link" title="Contact Email"
+                        id="email-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p class="copyright">© <span id="copyright-year"></span> Lakshay Dhoundiyal. All rights reserved.</p>
+                <p class="footer-built-with">Software Engg. | Security Researcher</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
